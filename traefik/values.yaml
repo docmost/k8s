@@ -15,16 +15,16 @@ providers:
     # -- Allows IngressRoute to reference resources in namespace other than theirs
     allowCrossNamespace: true
 
-ingressRoute:
-  dashboard:
-    enabled: false
-
 # default ssl cert
 tlsStore:
   default:
     defaultCertificate:
       secretName: docmost-cert-tls
 
+# Create an IngressRoute for the dashboard
+ingressRoute:
+  dashboard:
+    enabled: false
 
 experimental:
   fastProxy: {}
@@ -32,3 +32,4 @@ experimental:
 globalArguments:
   - "--global.checknewversion"
   - "--global.sendAnonymousUsage=false"
+
