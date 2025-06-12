@@ -1,0 +1,34 @@
+image:
+  tag: v3.4.1
+    
+# redirect all endpoints to https
+ports:
+  web:
+    redirections:
+      entryPoint:
+        to: websecure
+        scheme: https
+        permanent: true
+
+providers:
+  kubernetesCRD:
+    # -- Allows IngressRoute to reference resources in namespace other than theirs
+    allowCrossNamespace: true
+
+ingressRoute:
+  dashboard:
+    enabled: false
+
+# default ssl cert
+tlsStore:
+  default:
+    defaultCertificate:
+      secretName: docmost-com-wildcard-tls
+
+
+experimental:
+  fastProxy: {}
+
+globalArguments:
+  - "--global.checknewversion"
+  - "--global.sendAnonymousUsage=false"
