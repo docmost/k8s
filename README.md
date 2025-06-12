@@ -23,13 +23,12 @@ helm install -f values.yaml traefik traefik/traefik -n traefik
 helm repo add jetstack https://charts.jetstack.io --force-update
 helm install cert-manager jetstack/cert-manager --namespace cert-manager --create-namespace --version v1.18.0 --set crds.enabled=true
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.17.1/cert-manager.crds.yaml
-kubectl apply -f issuer.yaml -n traefik
-kubectl apply -f cert.yaml -n traefik
+kubectl apply -f traefik/issuer.yaml -n traefik
+kubectl apply -f traefik/cert-manager.yaml -n traefik
 ```
 
+## Install docmost
 ```sh
-# clone repo to docmost folder
-git clone https://github.com/docmost/k8s docmost
 
 # create kubernetes namespace
 kubectl create namespace docmost
