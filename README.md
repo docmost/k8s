@@ -15,7 +15,7 @@ helm repo update
 helm install traefik traefik/traefik
 
 kubectl apply -f traefik/access.yaml -n traefik
-helm install -f values.yaml traefik traefik/traefik -n traefik
+helm install -f traefik/values.yaml traefik traefik/traefik -n traefik
 ```
 
 ## Install cert manager for SSL (important cause distributed ssl not available in traefik community edition)
