@@ -47,3 +47,6 @@ kubectl logs deployment/docmost-app -n docmost
 ```
 
 
+Traefik: https://doc.traefik.io/traefik/getting-started/install-traefik/
+Cert manager: https://cert-manager.io/docs/getting-started/
+
