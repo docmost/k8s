@@ -23,7 +23,7 @@ ingressRoute:
 tlsStore:
   default:
     defaultCertificate:
-      secretName: docmost-com-wildcard-tls
+      secretName: docmost-cert-tls
 
 
 experimental:
